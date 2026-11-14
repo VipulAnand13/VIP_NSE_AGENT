@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NSE Trader Desk</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f2f4f9;--card:#fff;--ink:#16203a;--mut:#6a7390;--line:#dfe3ee;--acc:#2b3a8c;--up:#0f8f6b;--dn:#c8374a;--amb:#d98a12;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1424;--card:#171f36;--ink:#e8ecf8;--mut:#8f99b8;--line:#28324f;--acc:#8fa2ff;--up:#2fc79a;--dn:#ff6b7d;--amb:#f0a93a;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0e1424;--card:#171f36;--ink:#e8ecf8;--mut:#8f99b8;--line:#28324f;--acc:#8fa2ff;--up:#2fc79a;--dn:#ff6b7d;--amb:#f0a93a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.45 Manrope,system-ui,sans-serif;font-variant-numeric:tabular-nums}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 20px 8px}
+h1{font-size:22px;font-weight:800;margin:0;letter-spacing:-.01em}.sub{color:var(--mut);font-size:13px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:8px;font:600 13px Manrope,sans-serif;cursor:pointer}
+.btn.p{background:var(--acc);border-color:var(--acc);color:var(--bg)}.btn:focus-visible,.row:focus-visible,.step:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.demo{margin:0 20px;padding:8px 12px;border-left:4px solid var(--amb);background:var(--card);font-size:13px;border-radius:0 8px 8px 0}
+.pipe{display:flex;gap:8px;overflow-x:auto;padding:14px 20px}
+.step{flex:0 0 auto;min-width:118px;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:10px 12px;cursor:pointer;font:600 13px Manrope,sans-serif}
+.step small{display:block;font-weight:400;color:var(--mut);margin-top:2px}.step.on{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.step i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin-right:6px}.step.ok i{background:var(--up)}
+.cmd{margin:0 20px;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:13px;overflow-x:auto;white-space:pre}
+main{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:16px;padding:16px 20px 28px}
+@media(max-width:860px){main{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:20px;padding:4px 11px;font:600 12px Manrope,sans-serif;cursor:pointer}
+.chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+input[type=search]{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:400 14px Manrope,sans-serif}
+.list{max-height:62vh;overflow:auto;margin-top:6px}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 6px;border-bottom:1px solid var(--line);cursor:pointer;border-radius:6px}
+.row:hover,.row.on{background:var(--bg)}.row b{font-weight:800}.row .tags{grid-column:1/3;color:var(--mut);font-size:12px}.rsi{font-size:12px;color:var(--mut);text-align:right}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px}.big{font-size:26px;font-weight:800}
+svg{width:100%;height:auto;display:block;touch-action:none}.leg{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--mut);margin-top:8px}
+.tip{min-height:20px;font-size:13px;color:var(--mut)}.empty{padding:40px 10px;text-align:center;color:var(--mut)}
+</style></head><body>
+<header><div><h1>NSE Trader Desk</h1><div class="sub" id="meta"></div></div>
+<div><input id="file" type="file" accept=".json" multiple hidden><button class="btn p" id="load">Load scan files</button> <button class="btn" id="theme">Theme</button></div></header>
+<div class="demo" id="demo" hidden>Demo data. Load <b>watchlist.json</b>, <b>charts.json</b> (and optionally <b>plan.json</b>) from your trader folder to see your real scan. Files stay in your browser.</div>
+<div class="pipe" id="pipe"></div><div class="cmd" id="cmd"></div>
+<main><section class="panel"><input type="search" id="q" placeholder="Search a symbol"><div class="chips" id="chips"></div><div class="list" id="list"></div></section>
+<section class="panel" id="detail"></section></main>
+<script>
+const $=id=>document.getElementById(id);
+const STEPS=[["Scanner","scan.py daily / orb","python3 …/trader-scanner-NSE/scan.py daily"],["News","headlines for picks","python3 …/trader-news-NSE/news.py --watchlist trader/watchlist.json"],["Entry","bar closes above range","python3 …/trader-entry-NSE/entry.py check RELIANCE --write"],["Exit","stop and 2R target","python3 …/trader-exit-NSE/exit.py plan --from trader/entry.json --write"],["Odds","10,000 replays","python3 …/trader-timemachine-NSE/timemachine.py run"],["Size","shares inside your risk","python3 …/trader-budget-NSE/size.py --write"],["Risk","pass or block","python3 …/trader-risk-NSE/check.py"]];
+let W=null,C=null,P=null,sel=null,tag="all",demo=true,stepOn=0;
+const num=v=>{if(v&&typeof v=="object")v=v.price??v.value;const n=parseFloat(String(v).replace(/[₹,]/g,""));return isFinite(n)?n:null};
+const nm=s=>String(s).replace(/_/g," ");
+function mk(){let s=7,r=()=>(s=s*16807%2147483647)/2147483647,o={h:[],w:{as_of:"demo",hits:[]},c:{}};
+["RELIANCE","TCS","M&M","LT","TITAN","PNB"].forEach((sym,k)=>{let p=100+k*300,t=[],O=[],H=[],L=[],Cl=[],V=[],d=Date.now()/1e3-90*86400;
+for(let i=0;i<80;i++){let m=(i>66?0.011:0.0008)+(r()-.5)*0.02,op=p;p*=1+m;t.push(d+i*86400);O.push(op);Cl.push(p);H.push(Math.max(op,p)*(1+r()*.006));L.push(Math.min(op,p)*(1-r()*.006));V.push(1e5+r()*2e5)}
+o.c[sym]={t,o:O,h:H,l:L,c:Cl,v:V};o.w.hits.push({symbol:sym,setups:k%2?["bull_flag"]:["20_day_closing_high_breakout","bull_flag"],price:+p.toFixed(2),rsi:55+k*3,close_date:"demo"})});return o}
+function rsi(c,n=14){let out=Array(c.length).fill(null);if(c.length<=n)return out;let g=0,l=0;for(let i=1;i<=n;i++){let d=c[i]-c[i-1];d>0?g+=d:l-=d}g/=n;l/=n;out[n]=l?100-100/(1+g/l):100;
+for(let i=n+1;i<c.length;i++){let d=c[i]-c[i-1];g=(g*(n-1)+Math.max(d,0))/n;l=(l*(n-1)+Math.max(-d,0))/n;out[i]=l?100-100/(1+g/l):100}return out}
+const sma=(c,n)=>c.map((_,i)=>i<n-1?null:c.slice(i-n+1,i+1).reduce((a,b)=>a+b,0)/n);
+function render(){const hits=(W.hits||[]).filter(h=>(tag=="all"||(h.setups||[]).some(s=>nm(s)==tag))&&h.symbol.includes($("q").value.toUpperCase()));
+const all=[...new Set((W.hits||[]).flatMap(h=>(h.setups||[]).map(nm)))];
+$("chips").innerHTML=["all",...all].map(t=>`<button class="chip ${t==tag?"on":""}" data-t="${t}">${t}</button>`).join("");
+$("list").innerHTML=hits.length?hits.map(h=>`<div class="row ${h.symbol==sel?"on":""}" tabindex="0" data-s="${h.symbol}"><b>${h.symbol}</b><span>₹${(+h.price).toLocaleString("en-IN")}</span><span class="tags">${(h.setups||[]).map(nm).join(", ")}</span><span class="rsi">${h.rsi!=null?"RSI "+(+h.rsi).toFixed(0):""}</span></div>`).join(""):'<div class="empty">No stock matches. Clear the search or pick another setup.</div>';
+$("meta").textContent=`${(W.hits||[]).length} setups · ${W.as_of||W.mode||""}`;$("demo").hidden=!demo;
+$("pipe").innerHTML=STEPS.map((s,i)=>`<button class="step ${i==stepOn?"on":""} ${(i==0&&!demo)||(i==3&&P)?"ok":""}" data-i="${i}"><i></i>${i+1}. ${s[0]}<small>${s[1]}</small></button>`).join("");
+$("cmd").textContent="Run in Terminal from your trading folder:\n"+STEPS[stepOn][2];chart()}
+function chart(){const d=$("detail"),s=sel&&C[sel];if(!s){d.innerHTML='<div class="empty">Pick a stock on the left to see its chart with the signals marked.</div>';return}
+const n=Math.min(s.c.length,70),a=s.c.length-n,X=(arr)=>arr.slice(a),o=X(s.o),h=X(s.h),l=X(s.l),c=X(s.c),v=X(s.v||[]),t=X(s.t);
+const R=rsi(s.c).slice(a),M=sma(s.c,20).slice(a),Wd=760,Ht=380,pl=44,pr=64,pt=12,ph=270,vh=60;
+const plan=P&&String(P.symbol||"").replace(/\.NS$/,"")==sel?{e:num(P.entry),s:num(P.stop),t:num(P.target)}:null;
+const vals=[...h,...l,...(plan?[plan.e,plan.s,plan.t].filter(Boolean):[])],mx=Math.max(...vals),mn=Math.min(...vals),pad=(mx-mn)*.06||1;
+const y=p=>pt+(mx+pad-p)/(mx-mn+2*pad)*ph,bw=(Wd-pl-pr)/n,x=i=>pl+bw*i+bw/2,vm=Math.max(...v,1);let g="";
+for(let k=0;k<5;k++){const p=mn+(mx-mn)*k/4;g+=`<line x1="${pl}" x2="${Wd-pr}" y1="${y(p)}" y2="${y(p)}" stroke="var(--line)"/><text x="${Wd-pr+6}" y="${y(p)+4}" font-size="11" fill="var(--mut)">${p.toFixed(p>500?0:1)}</text>`}
+let hi="",pts="",mk="";c.forEach((cl,i)=>{const gi=a+i,up=cl>=o[i],col=up?"var(--up)":"var(--dn)";
+g+=`<line x1="${x(i)}" x2="${x(i)}" y1="${y(h[i])}" y2="${y(l[i])}" stroke="${col}"/><rect x="${x(i)-bw*.32}" y="${y(Math.max(o[i],cl))}" width="${bw*.64}" height="${Math.max(1,Math.abs(y(o[i])-y(cl)))}" fill="${col}"/>`;
+if(v[i])g+=`<rect x="${x(i)-bw*.32}" y="${pt+ph+10+vh-v[i]/vm*vh}" width="${bw*.64}" height="${v[i]/vm*vh}" fill="${col}" opacity=".35"/>`;
+if(gi>=20){const pm=Math.max(...s.c.slice(gi-20,gi));hi+=`${hi?"L":"M"}${x(i)},${y(pm)}`;if(cl>pm&&s.c[gi-1]<=Math.max(...s.c.slice(gi-21,gi-1)))mk+=`<path d="M${x(i)},${y(l[i])+16} l-7,12 h14z" fill="var(--up)"/><title>Closed above the 20-day high</title>`}
+if(M[i]&&i&&M[i-1]&&c[i-1]<M[i-1]&&cl>M[i])mk+=`<path d="M${x(i)},${y(l[i])+8} l6,6 l-6,6 l-6,-6z" fill="var(--amb)"/><title>Reclaimed the 20-day average</title>`;
+if(R[i]!=null&&R[i]<30)mk+=`<circle cx="${x(i)}" cy="${y(l[i])+12}" r="5" fill="var(--dn)"/><title>RSI under 30</title>`;
+if(M[i])pts+=`${pts?"L":"M"}${x(i)},${y(M[i])}`});
+let pg="";if(plan)[["e","Entry","var(--acc)"],["s","Stop","var(--dn)"],["t","Target","var(--up)"]].forEach(([k,lb,co])=>{if(plan[k])pg+=`<line x1="${pl}" x2="${Wd-pr}" y1="${y(plan[k])}" y2="${y(plan[k])}" stroke="${co}" stroke-dasharray="6 4" stroke-width="1.5"/><text x="${pl+4}" y="${y(plan[k])-4}" font-size="11" font-weight="700" fill="${co}">${lb} ${plan[k]}</text>`});
+const last=c[n-1],chg=(last/c[n-2]-1)*100,hit=(W.hits||[]).find(q=>q.symbol==sel)||{};
+d.innerHTML=`<div class="head"><div><span class="big">${sel}</span> <span class="sub">${(hit.setups||[]).map(nm).join(", ")}</span></div><div><span class="big">₹${last.toLocaleString("en-IN",{maximumFractionDigits:2})}</span> <b style="color:var(${chg>=0?"--up":"--dn"})">${chg>=0?"+":""}${chg.toFixed(2)}%</b></div></div>
+<svg id="svg" viewBox="0 0 ${Wd} ${Ht}" role="img" aria-label="Candlestick chart of ${sel} with signals">${g}<path d="${hi}" fill="none" stroke="var(--mut)" stroke-dasharray="3 3"/><path d="${pts}" fill="none" stroke="var(--acc)" stroke-width="1.6"/>${mk}${pg}<line id="cx" y1="${pt}" y2="${pt+ph}" stroke="var(--mut)" opacity="0"/></svg>
+<div class="tip" id="tip">Touch or hover a candle for its numbers.</div>
+<div class="leg"><span style="color:var(--up)">▲ closed above 20-day high</span><span style="color:var(--amb)">◆ reclaimed 20-day average</span><span style="color:var(--dn)">● RSI under 30</span><span>dashed grey: prior 20-day high</span><span style="color:var(--acc)">blue: 20-day average</span></div>
+${plan?"":'<p class="sub">Load plan.json to draw entry, stop and target on this chart (it is shown only for the stock the plan is for).</p>'}`;
+const svg=$("svg");const mv=e=>{const r=svg.getBoundingClientRect(),i=Math.max(0,Math.min(n-1,Math.floor(((e.clientX-r.left)/r.width*Wd-pl)/bw)));$("cx").setAttribute("x1",x(i));$("cx").setAttribute("x2",x(i));$("cx").setAttribute("opacity",.6);
+$("tip").textContent=`${new Date(t[i]*1e3).toLocaleDateString("en-IN",{day:"numeric",month:"short"})}  O ${o[i].toFixed(2)}  H ${h[i].toFixed(2)}  L ${l[i].toFixed(2)}  C ${c[i].toFixed(2)}${v[i]?"  Vol "+Math.round(v[i]).toLocaleString("en-IN"):""}`};svg.onpointermove=mv;svg.onpointerdown=mv}
+document.addEventListener("click",e=>{const r=e.target.closest("[data-s]"),t=e.target.closest("[data-t]"),s=e.target.closest("[data-i]");if(r)sel=r.dataset.s;if(t)tag=t.dataset.t;if(s)stepOn=+s.dataset.i;if(r||t||s)render()});
+document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.dataset.s){sel=e.target.dataset.s;render()}});
+$("q").oninput=render;$("load").onclick=()=>$("file").click();
+$("theme").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).colorScheme=="dark";r.dataset.theme=d?"light":"dark"};
+$("file").onchange=async e=>{for(const f of e.target.files){try{const j=JSON.parse(await f.text());
+if(j.hits){W=j;demo=false;sel=(j.hits[0]||{}).symbol}else if(j.stop!==undefined||j.target!==undefined)P=j;else if(Object.values(j)[0]&&Object.values(j)[0].c)C=Object.assign(C||{},j)}catch(x){alert(f.name+" is not a valid JSON file.")}}
+if(demo===false&&!C)C={};render()};
+const D=mk();W=D.w;C=D.c;sel="RELIANCE";render();
+(async()=>{try{const[a,b]=await Promise.all([fetch("data/watchlist.json"),fetch("data/charts.json")]);if(a.ok){W=await a.json();C=b.ok?await b.json():{};demo=false;sel=((W.hits||[])[0]||{}).symbol;render()}}catch(e){}})();
+</script></body></html>
