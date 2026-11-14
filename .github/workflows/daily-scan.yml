@@ -1,1 +1,38 @@
-
+name: Daily NSE scan
+on:
+  schedule:
+    - cron: "30 11 * * 1-5"   # 17:00 IST, after the NSE close, Monday to Friday
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: daily-scan
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the stock list
+        run: |
+          mkdir -p trader nsefile
+          if [ -s data/universe.txt ]; then
+            cp data/universe.txt trader/universe.txt
+          else
+            curl -L --max-time 60 -A "Mozilla/5.0" -o nsefile/ind_nifty200list.csv \
+              https://nsearchives.nseindia.com/content/indices/ind_nifty200list.csv || true
+            python3 skills/trader-scanner-NSE/scan.py universe --index nifty200 --offline nsefile
+          fi
+      - name: Daily scan and chart export
+        run: |
+          python3 skills/trader-scanner-NSE/scan.py daily --pause 1
+          python3 export_charts.py
+          mkdir -p docs/data
+          cp trader/watchlist.json trader/charts.json docs/data/
+      - name: Publish results
+        run: |
+          git config user.name "scan-bot"
+          git config user.email "scan-bot@users.noreply.github.com"
+          git add docs/data
+          git diff --cached --quiet || (git commit -m "Daily scan $(date -u +%F)" && git push)
