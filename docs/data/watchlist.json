@@ -1,10 +1,10 @@
 {
   "created_by": "trader-scanner-NSE",
-  "created_at": "2026-11-19T19:34:19Z",
+  "created_at": "2026-11-20T19:12:09Z",
   "mode": "daily",
-  "as_of": "2026-11-18 close",
+  "as_of": "2026-11-19 close",
   "universe": 200,
-  "scanned": 153,
+  "scanned": 159,
   "failed": 0,
   "source": "yahoo",
   "filters": {
@@ -14,45 +14,26 @@
   "note": "A scan is a list of charts that match a rule, not a list of stocks to buy.",
   "hits": [
     {
-      "symbol": "PAYTM",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1890.0,
-      "close_date": "2026-11-18",
-      "rsi": 64.2,
-      "volume": 21537474
-    },
-    {
-      "symbol": "SBIN",
+      "symbol": "HDFCBANK",
       "setups": [
         "breakout_20d",
         "bull_flag"
       ],
-      "price": 1135.0,
-      "close_date": "2026-11-18",
-      "rsi": 79.3,
-      "volume": 26524864
+      "price": 821.8,
+      "close_date": "2026-11-19",
+      "rsi": 73.9,
+      "volume": 70096849
     },
     {
-      "symbol": "RELIANCE",
+      "symbol": "AXISBANK",
       "setups": [
+        "breakout_20d",
         "bull_flag"
       ],
-      "price": 1363.0,
-      "close_date": "2026-11-18",
-      "rsi": 73.1,
-      "volume": 14434988
-    },
-    {
-      "symbol": "HDFCBANK",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 808.15,
-      "close_date": "2026-11-18",
-      "rsi": 71.2,
-      "volume": 24082045
+      "price": 1380.8,
+      "close_date": "2026-11-19",
+      "rsi": 71.4,
+      "volume": 21476210
     },
     {
       "symbol": "ICICIBANK",
@@ -60,230 +41,307 @@
         "breakout_20d",
         "bull_flag"
       ],
-      "price": 1601.3,
-      "close_date": "2026-11-18",
-      "rsi": 77.6,
-      "volume": 11222837
+      "price": 1608.9,
+      "close_date": "2026-11-19",
+      "rsi": 78.3,
+      "volume": 17972748
     },
     {
       "symbol": "MARUTI",
       "setups": [
-        "bull_flag"
+        "breakout_20d"
       ],
-      "price": 12632.0,
-      "close_date": "2026-11-18",
-      "rsi": 59.6,
-      "volume": 1371676
+      "price": 13589.0,
+      "close_date": "2026-11-19",
+      "rsi": 72.2,
+      "volume": 1647972
     },
     {
-      "symbol": "GROWW",
+      "symbol": "SBIN",
       "setups": [
-        "bull_flag"
+        "breakout_20d"
       ],
-      "price": 223.52,
-      "close_date": "2026-11-18",
-      "rsi": 66.0,
-      "volume": 73203464
+      "price": 1156.0,
+      "close_date": "2026-11-19",
+      "rsi": 81.3,
+      "volume": 17520251
     },
     {
-      "symbol": "M&M",
+      "symbol": "RELIANCE",
       "setups": [
+        "breakout_20d",
         "bull_flag"
       ],
-      "price": 3359.1,
-      "close_date": "2026-11-18",
-      "rsi": 67.4,
-      "volume": 4815280
-    },
-    {
-      "symbol": "IREDA",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 119.8,
-      "close_date": "2026-11-18",
-      "rsi": 66.8,
-      "volume": 117883299
-    },
-    {
-      "symbol": "AXISBANK",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1360.0,
-      "close_date": "2026-11-18",
-      "rsi": 68.7,
-      "volume": 8346883
+      "price": 1375.6,
+      "close_date": "2026-11-19",
+      "rsi": 74.8,
+      "volume": 13166219
     },
     {
       "symbol": "BSE",
       "setups": [
         "bull_flag"
       ],
-      "price": 3755.7,
-      "close_date": "2026-11-18",
-      "rsi": 59.1,
-      "volume": 2451020
+      "price": 3765.0,
+      "close_date": "2026-11-19",
+      "rsi": 59.7,
+      "volume": 3542203
     },
     {
-      "symbol": "INDIGO",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 5499.3,
-      "close_date": "2026-11-18",
-      "rsi": 64.7,
-      "volume": 1669632
-    },
-    {
-      "symbol": "LT",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 4159.0,
-      "close_date": "2026-11-18",
-      "rsi": 70.8,
-      "volume": 2070506
-    },
-    {
-      "symbol": "BAJFINANCE",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1093.85,
-      "close_date": "2026-11-18",
-      "rsi": 63.7,
-      "volume": 7748049
-    },
-    {
-      "symbol": "ITC",
+      "symbol": "M&M",
       "setups": [
         "breakout_20d"
       ],
-      "price": 296.6,
-      "close_date": "2026-11-18",
-      "rsi": 71.9,
-      "volume": 26492094
+      "price": 3509.0,
+      "close_date": "2026-11-19",
+      "rsi": 72.9,
+      "volume": 3534752
     },
     {
       "symbol": "MCX",
       "setups": [
         "bull_flag"
       ],
-      "price": 3619.0,
-      "close_date": "2026-11-18",
-      "rsi": 61.3,
-      "volume": 2085884
+      "price": 3645.0,
+      "close_date": "2026-11-19",
+      "rsi": 62.2,
+      "volume": 3009849
     },
     {
-      "symbol": "VOLTAS",
+      "symbol": "BAJFINANCE",
       "setups": [
         "bull_flag"
       ],
-      "price": 1134.6,
-      "close_date": "2026-11-18",
-      "rsi": 60.9,
-      "volume": 6235185
+      "price": 1092.85,
+      "close_date": "2026-11-19",
+      "rsi": 63.3,
+      "volume": 9240694
     },
     {
-      "symbol": "TVSMOTOR",
+      "symbol": "MAXHEALTH",
       "setups": [
-        "bull_flag"
+        "breakout_20d"
       ],
-      "price": 4369.0,
-      "close_date": "2026-11-18",
-      "rsi": 55.6,
-      "volume": 1603547
-    },
-    {
-      "symbol": "BANKBARODA",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 274.5,
-      "close_date": "2026-11-18",
-      "rsi": 72.9,
-      "volume": 24963688
-    },
-    {
-      "symbol": "DIVISLAB",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 11049.0,
-      "close_date": "2026-11-18",
-      "rsi": 66.7,
-      "volume": 619166
+      "price": 1040.65,
+      "close_date": "2026-11-19",
+      "rsi": 75.1,
+      "volume": 9531608
     },
     {
       "symbol": "KOTAKBANK",
       "setups": [
+        "breakout_20d",
         "bull_flag"
       ],
-      "price": 494.85,
-      "close_date": "2026-11-18",
-      "rsi": 74.6,
-      "volume": 13526085
+      "price": 503.0,
+      "close_date": "2026-11-19",
+      "rsi": 77.4,
+      "volume": 18942554
+    },
+    {
+      "symbol": "GROWW",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 220.89,
+      "close_date": "2026-11-19",
+      "rsi": 62.5,
+      "volume": 40399938
+    },
+    {
+      "symbol": "ITC",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 301.0,
+      "close_date": "2026-11-19",
+      "rsi": 74.2,
+      "volume": 28276514
+    },
+    {
+      "symbol": "TATASTEEL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 180.89,
+      "close_date": "2026-11-19",
+      "rsi": 51.7,
+      "volume": 46159049
     },
     {
       "symbol": "MEESHO",
       "setups": [
+        "breakout_20d",
         "bull_flag"
       ],
-      "price": 253.55,
-      "close_date": "2026-11-18",
-      "rsi": 66.9,
-      "volume": 24306636
+      "price": 258.85,
+      "close_date": "2026-11-19",
+      "rsi": 69.7,
+      "volume": 30394086
     },
     {
-      "symbol": "HINDUNILVR",
+      "symbol": "ADANIPOWER",
+      "setups": [
+        "breakout_20d",
+        "bull_flag"
+      ],
+      "price": 210.5,
+      "close_date": "2026-11-19",
+      "rsi": 62.9,
+      "volume": 30813178
+    },
+    {
+      "symbol": "BANKBARODA",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 285.9,
+      "close_date": "2026-11-19",
+      "rsi": 78.1,
+      "volume": 22497600
+    },
+    {
+      "symbol": "CANBK",
+      "setups": [
+        "breakout_20d",
+        "bull_flag"
+      ],
+      "price": 136.03,
+      "close_date": "2026-11-19",
+      "rsi": 69.9,
+      "volume": 45731449
+    },
+    {
+      "symbol": "ETERNAL",
       "setups": [
         "bull_flag"
       ],
-      "price": 1993.0,
-      "close_date": "2026-11-18",
-      "rsi": 60.1,
-      "volume": 2823436
+      "price": 366.85,
+      "close_date": "2026-11-19",
+      "rsi": 64.2,
+      "volume": 16447119
+    },
+    {
+      "symbol": "PNB",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 154.85,
+      "close_date": "2026-11-19",
+      "rsi": 86.6,
+      "volume": 38866704
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 4601.4,
+      "close_date": "2026-11-19",
+      "rsi": 67.1,
+      "volume": 1113263
+    },
+    {
+      "symbol": "IREDA",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 129.8,
+      "close_date": "2026-11-19",
+      "rsi": 76.0,
+      "volume": 39060565
+    },
+    {
+      "symbol": "UNIONBANK",
+      "setups": [
+        "breakout_20d",
+        "bull_flag"
+      ],
+      "price": 210.0,
+      "close_date": "2026-11-19",
+      "rsi": 77.8,
+      "volume": 23605142
     },
     {
       "symbol": "SHRIRAMFIN",
       "setups": [
         "bull_flag"
       ],
-      "price": 970.0,
-      "close_date": "2026-11-18",
-      "rsi": 55.6,
-      "volume": 5365506
+      "price": 973.3,
+      "close_date": "2026-11-19",
+      "rsi": 56.0,
+      "volume": 4785115
     },
     {
-      "symbol": "CANBK",
+      "symbol": "EICHERMOT",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 8058.5,
+      "close_date": "2026-11-19",
+      "rsi": 68.7,
+      "volume": 510572
+    },
+    {
+      "symbol": "TRENT",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 3225.0,
+      "close_date": "2026-11-19",
+      "rsi": 67.7,
+      "volume": 1252526
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "setups": [
+        "breakout_20d",
+        "reclaim_ma20"
+      ],
+      "price": 5556.0,
+      "close_date": "2026-11-19",
+      "rsi": 61.5,
+      "volume": 664167
+    },
+    {
+      "symbol": "DLF",
       "setups": [
         "bull_flag"
       ],
-      "price": 133.4,
-      "close_date": "2026-11-18",
-      "rsi": 66.8,
-      "volume": 28365818
+      "price": 768.0,
+      "close_date": "2026-11-19",
+      "rsi": 70.0,
+      "volume": 4590090
     },
     {
-      "symbol": "ADANIPOWER",
+      "symbol": "HINDUNILVR",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 2074.2,
+      "close_date": "2026-11-19",
+      "rsi": 69.6,
+      "volume": 1575171
+    },
+    {
+      "symbol": "ADANIGREEN",
       "setups": [
         "bull_flag"
       ],
-      "price": 205.3,
-      "close_date": "2026-11-18",
-      "rsi": 57.6,
-      "volume": 18421775
+      "price": 1425.0,
+      "close_date": "2026-11-19",
+      "rsi": 60.1,
+      "volume": 2221523
     },
     {
-      "symbol": "HYUNDAI",
+      "symbol": "INDIGO",
       "setups": [
         "bull_flag"
       ],
-      "price": 2097.5,
-      "close_date": "2026-11-18",
-      "rsi": 56.8,
-      "volume": 1771327
+      "price": 5475.0,
+      "close_date": "2026-11-19",
+      "rsi": 63.3,
+      "volume": 552065
     },
     {
       "symbol": "CHOLAFIN",
@@ -291,9 +349,441 @@
         "bull_flag"
       ],
       "price": 1875.0,
-      "close_date": "2026-11-18",
-      "rsi": 71.6,
-      "volume": 1425713
+      "close_date": "2026-11-19",
+      "rsi": 71.5,
+      "volume": 1565000
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1885.0,
+      "close_date": "2026-11-19",
+      "rsi": 63.8,
+      "volume": 1504283
+    },
+    {
+      "symbol": "MFSL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1399.0,
+      "close_date": "2026-11-19",
+      "rsi": 60.3,
+      "volume": 2026038
+    },
+    {
+      "symbol": "LGEINDIA",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 1716.2,
+      "close_date": "2026-11-19",
+      "rsi": 50.7,
+      "volume": 1650872
+    },
+    {
+      "symbol": "MOTHERSON",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 165.44,
+      "close_date": "2026-11-19",
+      "rsi": 54.1,
+      "volume": 16761515
+    },
+    {
+      "symbol": "HYUNDAI",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 2219.2,
+      "close_date": "2026-11-19",
+      "rsi": 66.9,
+      "volume": 1224318
+    },
+    {
+      "symbol": "PRESTIGE",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1655.0,
+      "close_date": "2026-11-19",
+      "rsi": 61.0,
+      "volume": 1638173
+    },
+    {
+      "symbol": "INDIANB",
+      "setups": [
+        "breakout_20d",
+        "bull_flag"
+      ],
+      "price": 947.0,
+      "close_date": "2026-11-19",
+      "rsi": 71.7,
+      "volume": 2816224
+    },
+    {
+      "symbol": "JIOFIN",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 226.8,
+      "close_date": "2026-11-19",
+      "rsi": 56.2,
+      "volume": 11038788
+    },
+    {
+      "symbol": "LENSKART",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 741.65,
+      "close_date": "2026-11-19",
+      "rsi": 67.3,
+      "volume": 3260248
+    },
+    {
+      "symbol": "TATACONSUM",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1144.0,
+      "close_date": "2026-11-19",
+      "rsi": 75.5,
+      "volume": 2102050
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1473.4,
+      "close_date": "2026-11-19",
+      "rsi": 60.8,
+      "volume": 1624444
+    },
+    {
+      "symbol": "ADANIENT",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 2703.1,
+      "close_date": "2026-11-19",
+      "rsi": 50.7,
+      "volume": 870425
+    },
+    {
+      "symbol": "NESTLEIND",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1303.4,
+      "close_date": "2026-11-19",
+      "rsi": 56.1,
+      "volume": 1800412
+    },
+    {
+      "symbol": "PFC",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 331.6,
+      "close_date": "2026-11-19",
+      "rsi": 51.1,
+      "volume": 7020696
+    },
+    {
+      "symbol": "IOC",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 147.8,
+      "close_date": "2026-11-19",
+      "rsi": 67.8,
+      "volume": 15290456
+    },
+    {
+      "symbol": "TMCV",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 445.85,
+      "close_date": "2026-11-19",
+      "rsi": 58.9,
+      "volume": 5017923
+    },
+    {
+      "symbol": "HDFCAMC",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 2689.3,
+      "close_date": "2026-11-19",
+      "rsi": 64.7,
+      "volume": 791810
+    },
+    {
+      "symbol": "VOLTAS",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1237.0,
+      "close_date": "2026-11-19",
+      "rsi": 72.9,
+      "volume": 1674439
+    },
+    {
+      "symbol": "BLUESTARCO",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1764.0,
+      "close_date": "2026-11-19",
+      "rsi": 70.9,
+      "volume": 1143929
+    },
+    {
+      "symbol": "BANKINDIA",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 161.9,
+      "close_date": "2026-11-19",
+      "rsi": 75.1,
+      "volume": 12319346
+    },
+    {
+      "symbol": "HINDPETRO",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 390.0,
+      "close_date": "2026-11-19",
+      "rsi": 63.3,
+      "volume": 5009384
+    },
+    {
+      "symbol": "PHOENIXLTD",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 2237.5,
+      "close_date": "2026-11-19",
+      "rsi": 67.7,
+      "volume": 867366
+    },
+    {
+      "symbol": "HINDCOPPER",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 425.45,
+      "close_date": "2026-11-19",
+      "rsi": 44.9,
+      "volume": 4437586
+    },
+    {
+      "symbol": "BEL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 404.2,
+      "close_date": "2026-11-19",
+      "rsi": 62.8,
+      "volume": 4574048
+    },
+    {
+      "symbol": "PIDILITIND",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1580.5,
+      "close_date": "2026-11-19",
+      "rsi": 59.4,
+      "volume": 1117795
+    },
+    {
+      "symbol": "AUBANK",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 983.9,
+      "close_date": "2026-11-19",
+      "rsi": 56.2,
+      "volume": 1742198
+    },
+    {
+      "symbol": "EXIDEIND",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 400.25,
+      "close_date": "2026-11-19",
+      "rsi": 60.6,
+      "volume": 4204014
+    },
+    {
+      "symbol": "HAVELLS",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1200.8,
+      "close_date": "2026-11-19",
+      "rsi": 66.0,
+      "volume": 1374202
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "setups": [
+        "breakout_20d",
+        "bull_flag"
+      ],
+      "price": 396.8,
+      "close_date": "2026-11-19",
+      "rsi": 63.0,
+      "volume": 4074704
+    },
+    {
+      "symbol": "MARICO",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 918.8,
+      "close_date": "2026-11-19",
+      "rsi": 68.3,
+      "volume": 1556123
+    },
+    {
+      "symbol": "JINDALSTEL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1114.5,
+      "close_date": "2026-11-19",
+      "rsi": 51.3,
+      "volume": 1270893
+    },
+    {
+      "symbol": "GLENMARK",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 2608.5,
+      "close_date": "2026-11-19",
+      "rsi": 63.8,
+      "volume": 540149
+    },
+    {
+      "symbol": "GODREJCP",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 929.5,
+      "close_date": "2026-11-19",
+      "rsi": 70.6,
+      "volume": 1501224
+    },
+    {
+      "symbol": "360ONE",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1197.9,
+      "close_date": "2026-11-19",
+      "rsi": 66.6,
+      "volume": 1133647
+    },
+    {
+      "symbol": "RVNL",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 195.0,
+      "close_date": "2026-11-19",
+      "rsi": 49.9,
+      "volume": 6939390
+    },
+    {
+      "symbol": "WAAREEENER",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 2433.0,
+      "close_date": "2026-11-19",
+      "rsi": 50.1,
+      "volume": 537332
+    },
+    {
+      "symbol": "GODREJPROP",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1881.0,
+      "close_date": "2026-11-19",
+      "rsi": 67.0,
+      "volume": 681657
+    },
+    {
+      "symbol": "LUPIN",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 1998.8,
+      "close_date": "2026-11-19",
+      "rsi": 50.5,
+      "volume": 630778
+    },
+    {
+      "symbol": "MOTILALOFS",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 1210.4,
+      "close_date": "2026-11-19",
+      "rsi": 68.4,
+      "volume": 1028444
+    },
+    {
+      "symbol": "LTF",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 275.3,
+      "close_date": "2026-11-19",
+      "rsi": 54.9,
+      "volume": 4480015
+    },
+    {
+      "symbol": "DRREDDY",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 1400.9,
+      "close_date": "2026-11-19",
+      "rsi": 74.1,
+      "volume": 829892
+    },
+    {
+      "symbol": "ABCAPITAL",
+      "setups": [
+        "bull_flag"
+      ],
+      "price": 417.05,
+      "close_date": "2026-11-19",
+      "rsi": 66.2,
+      "volume": 2742136
+    },
+    {
+      "symbol": "UPL",
+      "setups": [
+        "breakout_20d"
+      ],
+      "price": 569.8,
+      "close_date": "2026-11-19",
+      "rsi": 63.0,
+      "volume": 2006153
     },
     {
       "symbol": "GAIL",
@@ -301,290 +791,61 @@
         "breakout_20d",
         "bull_flag"
       ],
-      "price": 190.0,
-      "close_date": "2026-11-18",
-      "rsi": 71.2,
-      "volume": 13176633
-    },
-    {
-      "symbol": "BAJAJFINSV",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1856.2,
-      "close_date": "2026-11-18",
-      "rsi": 60.4,
-      "volume": 1344922
-    },
-    {
-      "symbol": "TRENT",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 3190.0,
-      "close_date": "2026-11-18",
-      "rsi": 65.7,
-      "volume": 757340
-    },
-    {
-      "symbol": "BANKINDIA",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 158.0,
-      "close_date": "2026-11-18",
-      "rsi": 72.3,
-      "volume": 14919660
-    },
-    {
-      "symbol": "JIOFIN",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 224.5,
-      "close_date": "2026-11-18",
-      "rsi": 53.6,
-      "volume": 10087043
-    },
-    {
-      "symbol": "ASIANPAINT",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 2580.3,
-      "close_date": "2026-11-18",
-      "rsi": 63.9,
-      "volume": 853544
-    },
-    {
-      "symbol": "MOTILALOFS",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1228.95,
-      "close_date": "2026-11-18",
-      "rsi": 72.5,
-      "volume": 1665868
-    },
-    {
-      "symbol": "DRREDDY",
-      "setups": [
-        "breakout_20d"
-      ],
-      "price": 1398.2,
-      "close_date": "2026-11-18",
-      "rsi": 73.7,
-      "volume": 1451282
-    },
-    {
-      "symbol": "UNITDSPR",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1441.0,
-      "close_date": "2026-11-18",
-      "rsi": 59.8,
-      "volume": 1356796
-    },
-    {
-      "symbol": "HAVELLS",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1140.0,
-      "close_date": "2026-11-18",
-      "rsi": 56.8,
-      "volume": 1619312
-    },
-    {
-      "symbol": "IOC",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 143.82,
-      "close_date": "2026-11-18",
-      "rsi": 61.8,
-      "volume": 12318848
-    },
-    {
-      "symbol": "MARICO",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 906.05,
-      "close_date": "2026-11-18",
-      "rsi": 65.9,
-      "volume": 1943028
-    },
-    {
-      "symbol": "HDFCAMC",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 2649.1,
-      "close_date": "2026-11-18",
-      "rsi": 62.4,
-      "volume": 635342
-    },
-    {
-      "symbol": "EXIDEIND",
-      "setups": [
-        "breakout_20d"
-      ],
-      "price": 389.05,
-      "close_date": "2026-11-18",
-      "rsi": 56.7,
-      "volume": 4265762
-    },
-    {
-      "symbol": "AMBUJACEM",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 384.8,
-      "close_date": "2026-11-18",
-      "rsi": 56.7,
-      "volume": 4172380
-    },
-    {
-      "symbol": "AUROPHARMA",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1796.3,
-      "close_date": "2026-11-18",
-      "rsi": 61.1,
-      "volume": 864486
-    },
-    {
-      "symbol": "TATACONSUM",
-      "setups": [
-        "breakout_20d"
-      ],
-      "price": 1130.9,
-      "close_date": "2026-11-18",
-      "rsi": 73.6,
-      "volume": 1248349
-    },
-    {
-      "symbol": "INDIANB",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 937.0,
-      "close_date": "2026-11-18",
-      "rsi": 69.6,
-      "volume": 1477818
-    },
-    {
-      "symbol": "DLF",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 764.3,
-      "close_date": "2026-11-18",
-      "rsi": 69.2,
-      "volume": 1690548
-    },
-    {
-      "symbol": "GODREJCP",
-      "setups": [
-        "breakout_20d"
-      ],
-      "price": 896.45,
-      "close_date": "2026-11-18",
-      "rsi": 63.0,
-      "volume": 1349822
-    },
-    {
-      "symbol": "GODREJPROP",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 1877.6,
-      "close_date": "2026-11-18",
-      "rsi": 66.8,
-      "volume": 566977
-    },
-    {
-      "symbol": "ABCAPITAL",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 412.4,
-      "close_date": "2026-11-18",
-      "rsi": 64.4,
-      "volume": 2244890
-    },
-    {
-      "symbol": "BIOCON",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 361.95,
-      "close_date": "2026-11-18",
-      "rsi": 52.4,
-      "volume": 2515709
-    },
-    {
-      "symbol": "HINDPETRO",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 386.45,
-      "close_date": "2026-11-18",
-      "rsi": 61.7,
-      "volume": 2197465
-    },
-    {
-      "symbol": "AUBANK",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 977.0,
-      "close_date": "2026-11-18",
-      "rsi": 55.0,
-      "volume": 867099
+      "price": 192.1,
+      "close_date": "2026-11-19",
+      "rsi": 73.4,
+      "volume": 5701345
     },
     {
       "symbol": "LODHA",
       "setups": [
         "bull_flag"
       ],
-      "price": 1197.1,
-      "close_date": "2026-11-18",
-      "rsi": 61.1,
-      "volume": 613469
+      "price": 1202.7,
+      "close_date": "2026-11-19",
+      "rsi": 61.7,
+      "volume": 902881
     },
     {
-      "symbol": "LTF",
+      "symbol": "PIIND",
+      "setups": [
+        "oversold",
+        "oversold_bounce"
+      ],
+      "price": 1630.0,
+      "close_date": "2026-11-19",
+      "rsi": 24.5,
+      "volume": 504826
+    },
+    {
+      "symbol": "RECLTD",
+      "setups": [
+        "reclaim_ma20"
+      ],
+      "price": 299.0,
+      "close_date": "2026-11-19",
+      "rsi": 50.1,
+      "volume": 2464709
+    },
+    {
+      "symbol": "SBICARD",
       "setups": [
         "bull_flag"
       ],
-      "price": 273.9,
-      "close_date": "2026-11-18",
-      "rsi": 53.9,
-      "volume": 2514303
-    },
-    {
-      "symbol": "JSWENERGY",
-      "setups": [
-        "bull_flag"
-      ],
-      "price": 511.85,
-      "close_date": "2026-11-18",
-      "rsi": 54.6,
-      "volume": 998045
+      "price": 572.65,
+      "close_date": "2026-11-19",
+      "rsi": 50.9,
+      "volume": 759913
     },
     {
       "symbol": "TATACAP",
       "setups": [
         "bull_flag"
       ],
-      "price": 340.2,
-      "close_date": "2026-11-18",
-      "rsi": 52.0,
-      "volume": 725343
+      "price": 345.55,
+      "close_date": "2026-11-19",
+      "rsi": 55.5,
+      "volume": 819164
     }
   ]
 }
